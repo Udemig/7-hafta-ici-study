@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- üst kısım -->
+    <header>
+      <h1>E-Ticaret</h1>
+
+      <input type="text" placeholder="ürün ismi giriniz.." />
+
+      <div>
+        <button id="basket-btn">Sepet</button>
+        <button>Kayıtol</button>
+        <button>Giriş Yap</button>
+      </div>
+    </header>
+    <!-- ana içerik -->
+    <main>
+      <!-- kategoriler -->
+      <section id="category-sec">
+        <h1>Kategoriler</h1>
+
+        <div class="categories">
+          <!-- <div class="category">
+            <img src="https://picsum.photos/640/640?r=719" />
+            <h2>Yiyecek</h2>
+          </div> -->
+        </div>
+      </section>
+
+      <!-- ürünler -->
+
+      <section id="product-sec">
+        <h1>Ürünler</h1>
+
+        <div class="products">
+          <!-- Kart  -->
+          <!-- <div class="card">
+            <img src="https://picsum.photos/640/640?r=663" />
+            <h4>Practical Soft Cheese</h4>
+            <h4>electronic</h4>
+            <div class="info">
+              <span>500$</span>
+              <button>Sepete Ekle</button>
+            </div>
+          </div> -->
+          <!-- Kart  -->
+        </div>
+      </section>
+    </main>
+
+    <!-- sepet modal -->
+    <div class="modal-wrapper">
+      <div class="modal">
+        <!-- kapatma butonu -->
+        <div id="btn-wrapper">
+          <img id="close-btn" src="images/e-close.png" />
+        </div>
+        <!-- sepetteki ürünler -->
+        <div id="list"></div>
+        <!-- toplam alanı -->
+        <div id="total">
+          <span id="count">0 ürün</span>
+          toplam:
+          <span id="price"> 0</span>$
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
