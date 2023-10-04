@@ -12,6 +12,10 @@ body {
 /* header */
 header {
   display: flex;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 10;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
@@ -166,6 +170,7 @@ section {
 .modal-wrapper {
   position: fixed;
   width: 100%;
+  z-index: 100;
   height: 100vh;
   top: 0;
   left: 0;
@@ -184,7 +189,7 @@ section {
   width: 70%;
   height: 60%;
   border-radius: 10px;
-  padding: 30px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -213,4 +218,39 @@ section {
 #price {
   color: rgb(141, 213, 32);
   font-weight: bold;
+}
+
+#list {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  gap: 30px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+#list .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+#list .item img {
+  width: 60px;
+  border-radius: 7px;
+}
+
+#list .item #delete-img {
+  width: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#list .item #delete-img:hover {
+  transform: rotate(15deg);
 }

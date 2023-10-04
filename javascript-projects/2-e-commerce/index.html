@@ -8,6 +8,11 @@
     />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
   </head>
   <body>
     <!-- üst kısım -->
@@ -37,7 +42,6 @@
       </section>
 
       <!-- ürünler -->
-
       <section id="product-sec">
         <h1>Ürünler</h1>
 
@@ -65,7 +69,15 @@
           <img id="close-btn" src="images/e-close.png" />
         </div>
         <!-- sepetteki ürünler -->
-        <div id="list"></div>
+        <div id="list">
+          <!-- <div class="item">
+            <img src="/images/e-trash.png" />
+            <h3 class="title">tshirt</h3>
+            <h4 class="price">900</h4>
+            <p>Miltar: 6</p>
+            <img id="delete-img" src="/images/e-trash.png" />
+          </div> -->
+        </div>
         <!-- toplam alanı -->
         <div id="total">
           <span id="count">0 ürün</span>
@@ -75,6 +87,10 @@
       </div>
     </div>
 
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
     <script src="main.js"></script>
   </body>
 </html>

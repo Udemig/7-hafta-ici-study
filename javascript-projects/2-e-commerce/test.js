@@ -18,3 +18,19 @@ fetch(url)
 function renderUser(data) {
   data.forEach((user) => document.write(user.name + '<br>'));
 }
+
+// ... > spread operator
+// bir objenin veya dizinin sahip olduğu değerleri
+// farklı bir obje veya dizye aktarmaya yarar
+const arac = {
+  type: 'electric',
+  wheel: 4,
+};
+
+const tesla = {
+  ...arac,
+  wheel: 2,
+  marka: 'tesla',
+};
+
+console.log(tesla);
