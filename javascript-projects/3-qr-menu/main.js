@@ -24,5 +24,19 @@ async function fetchMenu() {
 buttonsArea.addEventListener('click', (e) => {
   if (e.target.id !== 'buttons') {
     renderButtons(e.target.innerText);
+    // seçili kategoriye erişme
+    const selected = e.target.dataset.category;
+
+    if (selected === 'all') {
+      // filtreme yapma api den gelen verileri ekana bas
+      renderMenuItems(data.menu, menuList);
+    } else {
+      // seçili kategoriy e göre filtrele
+      const filtred = data.menu.filter(
+        (i) => i.category === selected
+      );
+      // filtrelenmiş veriyi ekrana bas
+      renderMenuItems(filtred, menuList);
+    }
   }
 });

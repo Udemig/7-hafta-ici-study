@@ -10,7 +10,9 @@ export function renderMenuItems(menuItems, menuList) {
   menuList.innerHTML = menuItems
     .map(
       (item) => `
-      <a id="card" href="#" class="d-flex  flex-column flex-md-row text-decoration-none text-dark gap-3">
+      <a id="card"  href="/detail.html?id=${
+        item.id
+      }" class="d-flex  flex-column flex-md-row text-decoration-none text-dark gap-3">
         <img
           class="rounded shadow img-fluid"
           src="${item.img}"
@@ -34,7 +36,7 @@ export function renderMenuItems(menuItems, menuList) {
 }
 
 // ekrana butonları basar
-export function renderButtons(active) {
+export function renderButtons(activeText) {
   // eski eklenen butonları html'den temizle
   buttonArea.innerHTML = '';
 
@@ -46,8 +48,11 @@ export function renderButtons(active) {
     // class belirleme
     buttonEle.className = 'btn btn-outline-dark';
 
+    // data-id belirleme
+    buttonEle.dataset.category = btn.value;
+
     // eğerki eleman aktifse bu klası ver
-    if (btn.text === active) {
+    if (btn.text === activeText) {
       buttonEle.classList.add('btn-dark', 'text-white');
     }
 

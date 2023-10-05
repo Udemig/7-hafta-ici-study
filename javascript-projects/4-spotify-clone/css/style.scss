@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+  font-family: 'poppins';
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px 15px;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    a {
+      padding: 20px 10px;
+      display: flex;
+      gap: 5px;
+      border-radius: 10px;
+      // yazılar tek satırda olucak
+      white-space: nowrap;
+      transition: all 0.3s;
+
+      @media (max-width: 870px) {
+        span {
+          display: none;
+        }
+        i {
+          font-size: 20px;
+        }
+      }
+
+      &:hover {
+        background: rgb(32, 32, 32);
+      }
+    }
+  }
+
+  #logo {
+    display: none;
+    width: 40px;
+  }
+
+  @media (max-width: 870px) {
+    #logo-text {
+      display: none;
+    }
+    #logo {
+      display: block;
+    }
+  }
+
+  img {
+    max-width: 130px;
+    object-fit: contain;
+  }
+}
+
+main {
+  width: 100%;
+}
+
+// ana içerik > üst kısım
+main header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 10px;
+
+  @media (max-width: 870px) {
+    justify-content: center;
+  }
+
+  form {
+    display: flex;
+    input {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+    }
+    button {
+      background: #1db954;
+      height: 100%;
+      padding: 0 25px;
+      border: none;
+      cursor: pointer;
+      color: white;
+      border-radius: 0 5px 5px 0;
+      &:hover {
+        background: #0ff15e;
+      }
+    }
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+
+    @media (max-width: 870px) {
+      display: none;
+    }
+
+    li {
+      padding: 5px 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 300ms;
+      &:hover {
+        background: rgb(60, 60, 60);
+      }
+    }
+  }
+}
+
+// ana içerik > alt kısım
+main .songs {
+  background: rgb(42, 42, 42);
+  height: 100%;
+  padding: 20px;
+  text-transform: capitalize;
+}
+
+main #list {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .card {
+    width: 200px;
+    padding: 15px;
+    background: #181818;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:hover .play {
+      opacity: 1;
+      bottom: 20px;
+    }
+
+    figure {
+      position: relative;
+      img {
+        width: 100%;
+        border-radius: 6px;
+        margin-bottom: 10px;
+      }
+      .play {
+        position: absolute;
+        background: #1db954;
+        right: 10px;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: grid;
+        place-items: center;
+        font-size: 23px;
+        // görünmez olucak
+        opacity: 0;
+        bottom: -20px;
+        transition: all 0.3s;
+        &:hover {
+          background: #0e9c3f;
+          scale: 0.9;
+        }
+      }
+    }
+
+    h4 {
+      margin-bottom: 6px;
+    }
+  }
+}
