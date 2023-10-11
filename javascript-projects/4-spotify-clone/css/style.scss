@@ -16,7 +16,7 @@ body {
   display: flex;
   background: black;
   color: white;
-  overflow-x: hidden;
+  overflow: hidden;
   font-family: 'poppins';
 }
 
@@ -133,16 +133,30 @@ main header {
 main .songs {
   background: rgb(42, 42, 42);
   height: 100%;
-  padding: 20px;
   text-transform: capitalize;
 }
 
+main .songs #title {
+  padding: 20px;
+}
+
 main #list {
-  margin-top: 30px;
+  margin-top: 20px;
+  padding: 0 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  height: 80vh;
+  overflow-y: auto;
   gap: 20px;
+
+  &::-webkit-scrollbar {
+    background: black;
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #0e9c3f;
+  }
 
   @media (max-width: 768px) {
     justify-content: center;
@@ -192,5 +206,155 @@ main #list {
     h4 {
       margin-bottom: 6px;
     }
+  }
+}
+
+// oynaıtlan şarkı barı
+.playing {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  z-index: 100;
+  padding: 10px 40px;
+  width: 100%;
+  background-color: #fa8bff;
+  background-image: linear-gradient(
+    240deg,
+    #fa8bff 0%,
+    #2bd2ff 52%,
+    #2bff88 90%
+  );
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.612);
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+  }
+
+  audio {
+    width: 300px;
+  }
+}
+
+.animate {
+  animation: turn 4s linear infinite;
+}
+
+@keyframes turn {
+  // anmisayon başlandığında sahip oluncak değer
+  from {
+    transform: rotate(0);
+  }
+  // animasyonun bitişinde sahip oluncak değer
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.audio-player {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  width: 300px;
+  height: 80px;
+  background-color: #282828;
+  border-radius: 8px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.album-cover {
+  width: 64px;
+  height: 64px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.player-controls {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.song-info {
+  margin-bottom: 4px;
+}
+
+.song-title {
+  font-size: 16px;
+  color: #fff;
+  margin: 0;
+}
+
+.artist {
+  font-size: 12px;
+  color: #b3b3b3;
+  margin: 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #4f4f4f;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 50%;
+  height: 100%;
+  background-color: #1db954;
+  transform-origin: left;
+  animation: progress-animation 10s linear infinite;
+}
+
+.buttons {
+  display: flex;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.play-btn,
+.pause-btn {
+  font-size: 16px;
+  color: #fff;
+  margin-right: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.play-btn:hover,
+.pause-btn:hover {
+  transform: scale(1.2);
+}
+
+@keyframes progress-animation {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
   }
 }

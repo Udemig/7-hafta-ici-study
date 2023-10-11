@@ -19,7 +19,7 @@
       <img id="logo-text" src="/images/spo.png" />
       <img id="logo" src="/images/no-text.png" />
       <nav>
-        <a href="#">
+        <a href="/">
           <i class="bi bi-house-fill"></i>
           <span>Ansayfa</span>
         </a>
@@ -44,7 +44,7 @@
     <!-- ana içerik -->
     <main>
       <header>
-        <form>
+        <form id="search-form">
           <input placeholder="şarkı ismi giriniz..." type="text" />
           <button><i class="bi bi-search"></i></button>
         </form>
@@ -57,7 +57,7 @@
       </header>
 
       <div class="songs">
-        <h2>Türkiyede en popüler</h2>
+        <h2 id="title">Türkiyede en popüler</h2>
 
         <div id="list">
           <!-- kart -->
@@ -77,6 +77,24 @@
         </div>
       </div>
     </main>
+    <!-- aktif şarkı barı -->
+    <div class="playing">
+      <!-- <div class="info">
+        <img
+          src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/c4/b2/f2/c4b2f2ae-5122-d699-2191-d6b438ed199f/cover.jpg/400x400cc.jpg"
+        />
+        <div>
+          <p>Şuan Oynatilıyor</p>
+          <h3>Şarkı İsmi</h3>
+        </div> 
+      </div>
+
+      <audio controls>
+        <source
+          src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/69/0b/b3/690bb3ec-cda5-cf2f-c86d-03c98c48db9a/mzaf_16116283004972729891.plus.aac.ep.m4a"
+        />
+      </audio> -->
+    </div>
     <!-- js bağlantı -->
     <script src="main.js" type="module"></script>
   </body>
