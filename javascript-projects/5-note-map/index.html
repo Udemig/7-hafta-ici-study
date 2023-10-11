@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Note Map</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- bs icons bağlantı -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <!-- harita kütüphanesi bağlantı -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+  </head>
+  <body>
+    <!-- sol menü -->
+    <div class="wrapper">
+      <aside>
+        <h1>Notlar</h1>
+        <!-- ekleme formu -->
+        <form>
+          <div class="field">
+            <label>Not Ekle:</label>
+            <input placeholder="örn:İş Ziyareti" type="text" />
+          </div>
+          <div class="field">
+            <label>Tarih Ekle:</label>
+            <input type="date" />
+          </div>
+          <div class="field">
+            <label>Durum:</label>
+            <select>
+              <option value="">Ziyaret</option>
+              <option value="">Park Yeri</option>
+              <option value="">Ev</option>
+              <option value="">İş</option>
+            </select>
+          </div>
+
+          <div class="buttons">
+            <button type="submit" id="save">Ekle</button>
+            <button type="button" id="cancel">İptal</button>
+          </div>
+        </form>
+
+        <!-- eklenen notların listesi -->
+        <ul>
+          <li>
+            <div>
+              <p>Önemli Konum</p>
+              <p><span>Tarih:</span> 10/21/23</p>
+              <p><span>Durum:</span> İş</p>
+            </div>
+            <i id="fly" class="bi bi-airplane-fill"></i>
+            <i id="delete" class="bi bi-trash3-fill"></i>
+          </li>
+        </ul>
+      </aside>
+    </div>
+    <!-- harita js'den ekrana basılcaka -->
+    <div id="map"></div>
+
+    <!-- js bağlantı -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>

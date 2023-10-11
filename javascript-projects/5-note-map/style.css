@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:wght@100;200;300;400;500;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: poppins;
+}
+
+#map {
+  height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  left: 10px;
+  height: 100vh;
+  z-index: 10000;
+}
+
+aside {
+  background: rgba(53, 51, 51, 0.742);
+  color: white;
+  height: 90%;
+  width: 280px;
+  transition: all 0.2s;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+aside:hover {
+  background: rgb(53, 51, 51);
+}
+
+aside h1 {
+  text-align: center;
+  font-family: 'Indie Flower';
+  font-size: 33px;
+  letter-spacing: 9px;
+  background: rgb(53, 51, 51);
+  padding: 3px;
+  border-radius: 10px;
+  margin: 10px 0 20px;
+}
+
+form {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form .field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.field input,
+.field select {
+  padding: 6px;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  border: none;
+}
+
+.buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.buttons button {
+  width: 100%;
+  background: black;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  transition: filter 0.3s;
+}
+
+.buttons button:hover {
+  filter: brightness(50%);
+}
+
+.buttons button:nth-child(2) {
+  background: rgb(227, 225, 225);
+  color: black;
+}
+
+/* liste alanı */
+ul {
+  overflow: auto;
+  height: 100%;
+  margin-top: 20px;
+  padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(70, 70, 70);
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+li p:nth-child(1) {
+  font-family: 'indie flower';
+
+  font-size: x-large;
+}
+
+li span {
+  font-weight: bold;
+}
+
+li i {
+  cursor: pointer;
+  font-size: 21px;
+}
+
+li i:hover {
+  filter: drop-shadow(0 0 10px white);
+}
+li i:nth-child(2):hover {
+  filter: drop-shadow(0 0 10px rgb(255, 0, 0));
+}
