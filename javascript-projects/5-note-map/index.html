@@ -27,12 +27,24 @@
     <!-- sol menü -->
     <div class="wrapper">
       <aside>
-        <h1>Notlar</h1>
+        <h1>
+          <span>Notlar</span>
+          <input checked="true" type="checkbox" id="checkbox" />
+          <label for="checkbox" class="toggle">
+            <div class="bars" id="bar1"></div>
+            <div class="bars" id="bar2"></div>
+            <div class="bars" id="bar3"></div>
+          </label>
+        </h1>
         <!-- ekleme formu -->
         <form>
           <div class="field">
             <label>Not Ekle:</label>
-            <input placeholder="örn:İş Ziyareti" type="text" />
+            <input
+              id="title"
+              placeholder="örn:İş Ziyareti"
+              type="text"
+            />
           </div>
           <div class="field">
             <label>Tarih Ekle:</label>
@@ -41,10 +53,10 @@
           <div class="field">
             <label>Durum:</label>
             <select>
-              <option value="">Ziyaret</option>
-              <option value="">Park Yeri</option>
-              <option value="">Ev</option>
-              <option value="">İş</option>
+              <option value="goto">Ziyaret</option>
+              <option value="park">Park Yeri</option>
+              <option value="home">Ev</option>
+              <option value="job">İş</option>
             </select>
           </div>
 
@@ -56,7 +68,7 @@
 
         <!-- eklenen notların listesi -->
         <ul>
-          <li>
+          <!-- <li>
             <div>
               <p>Önemli Konum</p>
               <p><span>Tarih:</span> 10/21/23</p>
@@ -64,7 +76,7 @@
             </div>
             <i id="fly" class="bi bi-airplane-fill"></i>
             <i id="delete" class="bi bi-trash3-fill"></i>
-          </li>
+          </li> -->
         </ul>
       </aside>
     </div>

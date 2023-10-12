@@ -12,27 +12,39 @@ body {
 
 #map {
   height: 100vh;
+  z-index: 20;
 }
 
 .wrapper {
   display: flex;
-  align-items: center;
+  align-items: start;
+  margin-top: 60px;
   position: fixed;
   left: 10px;
+  z-index: 50;
   height: 100vh;
-  z-index: 10000;
 }
 
 aside {
   background: rgba(53, 51, 51, 0.742);
   color: white;
-  height: 90%;
+  height: 900px;
   width: 280px;
-  transition: all 0.2s;
   border-radius: 10px;
   padding: 20px;
   display: flex;
   flex-direction: column;
+  transition: height 1s;
+}
+
+.hide aside {
+  height: 110px;
+  transition: height 1s;
+}
+
+.hide form,
+.hide ul {
+  display: none !important;
 }
 
 aside:hover {
@@ -40,6 +52,10 @@ aside:hover {
 }
 
 aside h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   text-align: center;
   font-family: 'Indie Flower';
   font-size: 33px;
@@ -48,6 +64,35 @@ aside h1 {
   padding: 3px;
   border-radius: 10px;
   margin: 10px 0 20px;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+    left: 0;
+    z-index: 999;
+    height: auto;
+    max-height: 100vh;
+    margin-top: 0px;
+    justify-content: center;
+  }
+
+  aside {
+    width: 100%;
+    height: 10%;
+    z-index: 999;
+    background: rgb(53, 51, 51);
+    border-radius: 0;
+  }
+}
+
+aside ul::-webkit-scrollbar {
+  background: none;
+  width: 6px;
+  direction: rtl;
+}
+aside ul::-webkit-scrollbar-thumb {
+  background: rgb(187, 185, 185);
 }
 
 form {
@@ -67,8 +112,11 @@ form .field {
   padding: 6px;
   border-radius: 6px;
   font-size: 15px;
-  outline: none;
   border: none;
+}
+
+.field input:focus {
+  outline: 2px solid red;
 }
 
 .buttons {
@@ -134,8 +182,70 @@ li i {
 }
 
 li i:hover {
-  filter: drop-shadow(0 0 10px white);
+  filter: drop-shadow(0 0 10px rgb(0, 170, 255));
 }
-li i:nth-child(2):hover {
+
+li i:nth-child(3):hover {
   filter: drop-shadow(0 0 10px rgb(255, 0, 0));
+}
+
+/*  arrrow */
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition-duration: 0.5s;
+}
+
+.bars {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(176, 92, 255);
+  border-radius: 4px;
+}
+
+#bar2 {
+  transition-duration: 0.8s;
+}
+
+#bar1,
+#bar3 {
+  width: 70%;
+}
+
+#checkbox:checked + .toggle .bars {
+  position: absolute;
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle #bar2 {
+  transform: scaleX(0);
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle {
+  transition-duration: 0.5s;
+  transform: rotate(180deg);
 }
