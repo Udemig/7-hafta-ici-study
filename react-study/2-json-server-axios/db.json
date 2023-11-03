@@ -1,0 +1,39 @@
+{
+  "todos": [
+    {
+      "id": "asfedhsu23543",
+      "title": "Learn JavaScript",
+      "status": "important",
+      "date": "2023-03-24",
+      "isDone": true
+    },
+    {
+      "id": "asfghs873g42",
+      "title": "Complete Daily Tasks",
+      "status": "daily",
+      "date": "2023-01-25",
+      "isDone": false
+    },
+    {
+      "id": "awe89wesdfhj",
+      "title": "Finish Job Project",
+      "status": "job",
+      "date": "2023-09-26",
+      "isDone": false
+    },
+    {
+      "id": "dsw4er92k3h",
+      "title": "Study for Exam",
+      "status": "important",
+      "date": "2023-09-27",
+      "isDone": false
+    },
+    {
+      "id": "a9s83rsfdn4s",
+      "title": "Exercise",
+      "status": "daily",
+      "date": "2023-09-28",
+      "isDone": true
+    }
+  ]
+}
