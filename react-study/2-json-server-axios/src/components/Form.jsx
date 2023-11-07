@@ -1,6 +1,14 @@
+import axios from 'axios';
 import { v4 } from 'uuid';
 
-const Form = () => {
+const Form = ({
+  setTodos,
+  todos,
+  totalCount,
+  maxPage,
+  setPage,
+  params,
+}) => {
   //
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,7 +30,21 @@ const Form = () => {
       date: new Date().toLocaleDateString(),
     };
 
-    console.log(newTodo);
+    // oluşturduğumuz todo'yu api'a ekleme
+    axios
+      .post('http://localhost:3000/todos', newTodo)
+      // api güncellenirse state'i / arayüzü güncelleme
+      .then(() => {
+        // önündeki sayfa doluysa son sayfaya yönlendir
+        if (todos.length === params._limit) {
+          // eğerki son sayfa doluysa bir fazlasına değilse son sayfaya yönlendir
+          setPage(
+            totalCount % params._limit === 0 ? maxPage + 1 : maxPage
+          );
+          return;
+        }
+        setTodos((todos) => [...todos, newTodo]);
+      });
   };
 
   return (

@@ -29,11 +29,88 @@
       "isDone": false
     },
     {
-      "id": "a9s83rsfdn4s",
-      "title": "Exercise",
+      "title": "selamlar",
       "status": "daily",
-      "date": "2023-09-28",
-      "isDone": true
+      "id": "9699e3a4-594a-465b-9129-67e5f3321946",
+      "isDone": false,
+      "date": "11/7/2023"
+    },
+    {
+      "title": "the100 izleeeee",
+      "status": "daily",
+      "id": "0a9a9e59-c642-4b8e-b74b-b6903731f560",
+      "isDone": false,
+      "date": "11/7/2023"
+    },
+    {
+      "title": "deneme",
+      "status": "daily",
+      "id": "6facef74-a12d-47f0-88a1-bd357e8b2b0b",
+      "isDone": false,
+      "date": "11/7/2023"
+    },
+    {
+      "title": "ses",
+      "status": "job",
+      "id": "3be3dd7d-801a-4086-84b1-da3af0e225b0",
+      "isDone": false,
+      "date": "11/7/2023"
+    },
+    {
+      "title": "deneme",
+      "status": "daily",
+      "id": "a0e6b263-efa7-4509-81eb-ccf5c8644901",
+      "isDone": false,
+      "date": "11/7/2023"
+    },
+    {
+      "title": "selam",
+      "status": "daily",
+      "id": "86450a53-e490-4706-b927-9c3d9264c909",
+      "isDone": false,
+      "date": "11/7/2023"
+    },
+    {
+      "title": "deme",
+      "status": "daily",
+      "id": "91c16754-05e8-47a7-86c4-730236b7098e",
+      "isDone": false,
+      "date": "11/7/2023"
+    },
+    {
+      "title": "12.todo",
+      "status": "daily",
+      "id": "e7f8ef25-2dd0-4645-86f6-b8a2efedd90e",
+      "isDone": false,
+      "date": "11/7/2023"
+    },
+    {
+      "title": "13.todo",
+      "status": "daily",
+      "id": "a335f900-6f8f-4dd8-9bb0-3209b2fd57b6",
+      "isDone": false,
+      "date": "11/7/2023"
+    },
+    {
+      "title": "asdasd",
+      "status": "job",
+      "id": "44e3a529-150f-4edb-a9b4-d4157a19ef2d",
+      "isDone": false,
+      "date": "11/7/2023"
+    },
+    {
+      "title": "deneme",
+      "status": "daily",
+      "id": "ae8d45dd-047a-447f-8d2e-ce9a2f8583b2",
+      "isDone": false,
+      "date": "11/7/2023"
+    },
+    {
+      "title": "deneme",
+      "status": "daily",
+      "id": "38f798d4-8dbb-4923-a1ed-b658c2925d1a",
+      "isDone": false,
+      "date": "11/7/2023"
     }
   ]
 }

@@ -39,6 +39,19 @@
 - Yerlişik değil paketini indermek gerekiyor
 - npm i axios
 
+  ``
+  // fetch ile
+  fetch('http://localhost:3000/todos', {
+  method: 'POST',
+  headers: {
+  'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(newTodo),
+  });
+
+  // axios ile
+  axios.post('http://localhost:3000/todos', newTodo);``
+
 # ve opertorü &&
 
 - - todos && response && todos.map((todo) => <ListItem key={todo.id} />)
@@ -46,3 +59,17 @@
 # optional chainnig ?.
 
 - - todos?.response?.map((todo) => <ListItem key={todo.id} />)
+
+# Altın Kural
+
+- API güncelleniyorsa arayüzde güncellenicek
+- Aryüz güncelleniyorsa api de güncelleicek
+
+- Sadece api'yi güncellerseniz.
+  Kullanıcı yaptığı işlemin gerçekleştiğini anlayamaz. Örn: alış veriş sepetinde sipraiş ver butonuna tıkldık. Sadce api isteği atarsak sipariş alınır ama bizim bu işlemin başarılı olduğüunu kullanıcıyada bildirmemiz lazım
+
+- Sadece arayüzü güncellerseniz.
+  Kullanıcı yaptığı işlemi sayfayı yenilyeince kaybeder. Örn: Alışveriş sepetinde kullanıcya alişveriş başarılı bildirimi verdik ama api'Ye istek atmadık o zman kullanıcı güncelrce bekelsede sipariş eline geçmez
+
+- Olması Gerken:
+  Önce api isteği atılır eğerki api isreği başarılı olursa arayüze bu yanıstılır. Başarısız olursa hata uyarısı verilir.
