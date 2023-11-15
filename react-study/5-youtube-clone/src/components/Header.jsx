@@ -1,24 +1,26 @@
-import { Link, useNavigate } from 'react-router-dom';
-import {
-  AiOutlineSearch,
-  AiFillBell,
-  AiFillVideoCamera,
-} from 'react-icons/ai';
+import { Link, useNavigate } from "react-router-dom";
+import { AiOutlineSearch, AiFillBell, AiFillVideoCamera } from "react-icons/ai";
 
 const Header = () => {
   const navigate = useNavigate();
 
+  // kullanıcyı arama sonuçları sayfaısna yönlendir
+  // url e arama parametresi olarak aratılan terimi ekle
   const handleSubmit = (e) => {
     e.preventDefault();
-    const query = e.target[0].value;
-    // kullanıcyı arama sonuöşarı sayfasına
-    // yönlendirme
-    navigate(`/results?search_query=${query}`);
+    const text = e.target[0].value;
+    navigate(`/results?search_query=${text}`);
   };
+
+  // Path params (Yol Parametreleri) > useParams
+  // www.amazon.com/ürün/60
+
+  // Query Params (Arama Parametreleri) > useSearchParams
+  // www.youtube.com/watch?id=12&start=47
 
   return (
     <header className="flex justify-between items-center p-4">
-      <Link to={'/'} className="flex items-center gap-[10px]">
+      <Link to={"/"} className="flex items-center gap-[10px]">
         <img className="w-[50px]" src="/youtube.png" />
         <h1 className="text-2xl hidden md:block">Youtube</h1>
       </Link>
