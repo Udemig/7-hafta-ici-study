@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { v4 } from 'uuid';
+import AddForm from './components/AddForm';
+import ListTodos from './components/ListTodos';
+import axios from 'axios';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setTodos } from './redux/actions/todoActions';
 
-function App() {
-  const [count, setCount] = useState(0)
+axios.defaults.baseURL = 'http://localhost:4000/';
+
+const App = () => {
+  const dispatch = useDispatch();
+
+  // veritabanındaki todoları al ve store'e aktar
+  useEffect(() => {
+    axios.get('/todos').then((res) => dispatch(setTodos(res.data)));
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="container d-flex flex-column gap-5 my-5">
+      <h2 className="text-center">Redux</h2>
 
-export default App
+      <AddForm />
+
+      <ListTodos />
+    </div>
+  );
+};
+
+export default App;

@@ -44,3 +44,19 @@
 - reducer / reducer'ların kurulumunu yap √
 - store'un kurlumunu yap √
 - store'u projeye tanıt √
+
+# Altın Kural
+
+- Verilerin api'dan geldiği ve state'yönetimi redux'In kullanıldığı projelerde
+- store'u güncelleme işlemini api isteğine bağıımlı hale getirmeliyiz
+- ancak istek başarılı olursa değişim gerçekleşmeli
+
+# Olası Hatalar
+
+- "Değişiklik yapıyorum ama sayfayı yenilemeden gelmiyor???"
+- - API'da > sıkıntı yok
+- - Store'da > hata var
+
+- - "Değişiklik yapıyorum sayfayı yeneleyince gidiyor!"
+- - API'da > hata var
+- - Store'da > sıkıntı yok
