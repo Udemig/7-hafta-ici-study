@@ -25,6 +25,7 @@ const basketReducer = (state = initialState, { type, payload }) => {
     case ActionTypes.ADD_TO_BASKET:
       return { ...state, basket: state.basket.concat(payload) };
 
+      
     case ActionTypes.UPDATE_ITEM:
       const newBasket = state.basket.map((item) => {
         if (item.id === payload) {
