@@ -1,0 +1,10 @@
+body {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.hero img {
+  filter: drop-shadow(0 0 80px rgba(255, 255, 255, 0.338));
+}

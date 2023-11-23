@@ -25,7 +25,6 @@ const basketReducer = (state = initialState, { type, payload }) => {
     case ActionTypes.ADD_TO_BASKET:
       return { ...state, basket: state.basket.concat(payload) };
 
-      
     case ActionTypes.UPDATE_ITEM:
       const newBasket = state.basket.map((item) => {
         if (item.id === payload) {
@@ -38,6 +37,11 @@ const basketReducer = (state = initialState, { type, payload }) => {
       });
 
       return { ...state, basket: newBasket };
+
+    // silincek id'li elemanı state'den kaldırır
+    case ActionTypes.REMOVE_ITEM:
+      const filtred = state.basket.filter((i) => i.id !== payload);
+      return { ...state, basket: filtred };
 
     default:
       return state;

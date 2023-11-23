@@ -1,16 +1,15 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { ActionTypes } from '../redux/actionTypes';
 import {
-  addToBasket,
   updateItem,
+  removeItem,
 } from '../redux/actions/basketActions';
 
 const BasketItem = ({ item }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="rounded-2 p-4 bg-white d-flex justify-content-between align-items-center my-5 text-black">
+    <div className="rounded-2 p-4 bg-white d-flex justify-content-between align-items-center mb-5 text-black">
       <div className="d-flex align-items-center gap-3">
         <img
           className="rounded-3"
@@ -33,6 +32,14 @@ const BasketItem = ({ item }) => {
           className="btn btn-sm btn-primary"
         >
           +
+        </button>
+        <button
+          onClick={() => {
+            dispatch(removeItem(item.id));
+          }}
+          className="btn btn-sm btn-danger"
+        >
+          X
         </button>
       </div>
     </div>

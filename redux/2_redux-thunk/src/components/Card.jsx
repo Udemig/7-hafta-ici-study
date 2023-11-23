@@ -48,7 +48,9 @@ const Card = ({ product }) => {
           onClick={handleClick}
           className="w-100 d-flex justify-content-between"
         >
-          <span>{found ? `Miktarı Arttır` : 'Sepete Ekle'}</span>
+          <span>
+            {found ? `Miktarı Arttır (${found.adet})` : 'Sepete Ekle'}
+          </span>
           <span className="text-success">{product.fiyat}₺</span>
         </button>
       </div>

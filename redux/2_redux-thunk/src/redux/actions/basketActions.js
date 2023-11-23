@@ -63,4 +63,11 @@ export const updateItem = (product) => (dispatch) => {
     );
 };
 
-export const removeItem = () => (dispatch) => {};
+// api'dan bir ürün kaldırır
+// devamında kaldırığı ürün id'sini reducer'a gönderir
+export const removeItem = (delete_id) => (dispatch) => {
+  axios.delete(`/basket/${delete_id}`).then(() =>
+    // ekranın güncellenmesi için reducer'a haber ver
+    dispatch({ type: ActionTypes.REMOVE_ITEM, payload: delete_id })
+  );
+};
