@@ -31,8 +31,8 @@ const MainPage = () => {
        * önce yükleniyor mu kontrol et
        * yükleniyorsa loading bileşnin ekrana bas
        * yüklenme bittiysa hata var mı kontrol et
-       * hata varsa ekrana mesaj bas
-       * hata yoksaher bir kategori için ekrana o kategorinin
+       * hata varsa ekrana hata mesajı bas
+       * hata yoksa her bir kategori için ekrana o kategorinin
        * filmlerini basıcak bileşeni ekrana bas
        */}
       {state.isGenresLoading ? (
