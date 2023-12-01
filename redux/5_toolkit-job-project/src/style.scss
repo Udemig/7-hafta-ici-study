@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  min-height: 100vh;
+  font-family: 'Poppins';
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  margin-bottom: 20px;
+
+  nav {
+    display: flex;
+    gap: 20px;
+
+    a {
+      text-decoration: none;
+      color: rgb(226, 68, 160);
+      font-size: 19px;
+    }
+
+    .active {
+      text-shadow: 0 0 20px pink;
+    }
+  }
+}
+
+.list-page {
+  padding: 20px;
+}
+
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 50px;
+}
+
+.card {
+  background: gray;
+  border-radius: 10px;
+  padding: 20px;
+
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    margin-bottom: 20px;
+
+    .letter {
+      background: purple;
+      width: 60px;
+      height: 60px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      font-size: 30px;
+      text-shadow: 0 0 20px white;
+    }
+
+    .info {
+      font-size: 20px;
+    }
+  }
+
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+
+    .field {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}

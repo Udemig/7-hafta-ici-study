@@ -4,6 +4,7 @@ import {
   decrease,
   reset,
 } from '../redux/slices/counterSlice';
+import { Button } from 'react-bootstrap';
 
 const Counter = () => {
   const state = useSelector((store) => store.counterReducer);
@@ -11,21 +12,16 @@ const Counter = () => {
 
   return (
     <div className="d-flex gap-2">
-      <button
-        className="bg-danger"
-        onClick={() => dispatch(decrease())}
-      >
-        Azalt
-      </button>
+      <Button onClick={() => dispatch(decrease())}>Azalt</Button>
       <p className="fw-bold fs-1 px-4">{state.count}</p>
       <button
-        className="bg-success"
+        className="btn btn-success"
         onClick={() => dispatch(increase())}
       >
         Arttır
       </button>
       <button
-        className="bg-secondary"
+        className="btn btn-secondary"
         onClick={() => dispatch(reset(0))}
       >
         Sıfırla
