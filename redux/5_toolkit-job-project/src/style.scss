@@ -51,6 +51,11 @@ header {
   border-radius: 10px;
   padding: 20px;
 
+  .top-area {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .head {
     display: flex;
     align-items: center;
@@ -85,4 +90,237 @@ header {
       gap: 10px;
     }
   }
+
+  .status {
+    display: flex;
+    p {
+      padding: 6px;
+      border-radius: 10px;
+    }
+  }
+}
+
+// button
+.button {
+  --main-focus: #2d8cf0;
+  --font-color: #dedede;
+  --bg-color-sub: #222;
+  --bg-color: #323232;
+  --main-color: #dedede;
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.button,
+.button__icon,
+.button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(33px);
+  color: var(--font-color);
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: var(--bg-color-sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 20px;
+  fill: var(--main-color);
+  color: white;
+}
+
+.button:hover {
+  background: var(--bg-color);
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px var(--main-color);
+}
+
+// hata
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+// ekleeme sayfası
+.add-page {
+  min-height: 90vh;
+  display: grid;
+  place-items: center;
+}
+
+.add-sec {
+  width: 70vw;
+  max-width: 700px;
+  box-shadow: 0 0 55px 0 rgb(226, 68, 160);
+  padding: 25px;
+
+  form {
+    margin-top: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div input,
+  div select {
+    padding: 10px 15px;
+    margin-top: 5px;
+    border-radius: 5px;
+    font-family: poppins;
+  }
+
+  div:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.filter-sec {
+  @extend .add-sec;
+  margin: 20px auto 80px;
+  div:last-child {
+    align-items: unset;
+  }
+}
+
+// ekleme butonu
+.add-button {
+  /* Variables */
+  --button_radius: 0.75em;
+  --button_color: #000000;
+  --button_outline_color: #e8e8e8;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--button_radius);
+  background: var(--button_outline_color);
+  cursor: pointer;
+  min-width: 140px;
+}
+
+.button_top {
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid var(--button_outline_color);
+  border-radius: var(--button_radius);
+  padding: 0.75em 1.5em;
+  background: var(--button_color);
+  color: var(--button_outline_color);
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+}
+
+.add-button:hover .button_top {
+  /* Pull the button upwards when hovered */
+  transform: translateY(-0.33em);
+}
+
+.add-button:active .button_top {
+  /* Push the button downwards when pressed */
+  transform: translateY(0);
+}
+
+// silme butonu
+
+.delete-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.delete-svgIcon {
+  width: 15px;
+  transition-duration: 0.3s;
+}
+
+.delete-svgIcon path {
+  fill: white;
+}
+
+.delete-button:hover {
+  width: 90px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+}
+
+.delete-button:hover .delete-svgIcon {
+  width: 20px;
+  transition-duration: 0.3s;
+  transform: translateY(60%);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.delete-button::before {
+  display: none;
+  content: 'Delete';
+  color: white;
+  transition-duration: 0.3s;
+  font-size: 2px;
+}
+
+.delete-button:hover::before {
+  display: block;
+  padding-right: 10px;
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(0px);
+  transition-duration: 0.3s;
 }

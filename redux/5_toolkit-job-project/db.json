@@ -1,15 +1,6 @@
 {
   "jobs": [
     {
-      "id": 1,
-      "position": "Frontend Developer",
-      "company": "Udemig",
-      "location": "İzmir/Bayraklı",
-      "status": "Devam Ediyor",
-      "type": "Tam Zamanlı",
-      "date": "10/1/2023"
-    },
-    {
       "id": 2,
       "position": "Backend Developer",
       "company": "Kodlama.io",
@@ -17,24 +8,6 @@
       "status": "Mülakat",
       "type": "Tam Zamanlı",
       "date": "3/29/2023"
-    },
-    {
-      "id": 3,
-      "position": "UI/UX Designer",
-      "company": "Figma",
-      "location": "New York",
-      "status": "Devam Ediyor",
-      "type": "Uzaktan",
-      "date": "10/3/2023"
-    },
-    {
-      "id": 4,
-      "position": "Software Engineer",
-      "company": "Google",
-      "location": "New York",
-      "status": "Reddedildi",
-      "type": "Tam Zamanlı",
-      "date": "10/2/2020"
     },
     {
       "id": 5,
@@ -107,6 +80,15 @@
       "type": "Yarı Zamanlı",
       "id": "f7547b59-aff1-46a7-8cb7-0fead8f63614",
       "date": "11/30/2023"
+    },
+    {
+      "position": "Frontend Developer",
+      "company": "Udemig",
+      "location": "New York",
+      "status": "Mülakat",
+      "type": "Staj",
+      "id": "962f4d90-a04c-4806-99f1-4d224c624a7a",
+      "date": "12/5/2023"
     }
   ]
 }
