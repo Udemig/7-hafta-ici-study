@@ -14,7 +14,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getFlights());
+    setInterval(() => dispatch(getFlights()), 5000);
   }, []);
 
   // modal'ı açar
@@ -48,7 +48,11 @@ const App = () => {
         </button>
       </div>
 
-      {isMapView ? <MapView openModal={openModal} /> : <ListView />}
+      {isMapView ? (
+        <MapView openModal={openModal} />
+      ) : (
+        <ListView openModal={openModal} />
+      )}
 
       {/* her iki sayfadada kullanbilmek için modalı app jsde tuttuk */}
       {isModalOpen && (

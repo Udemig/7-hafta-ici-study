@@ -299,3 +299,19 @@ header p {
     transform: rotate(360deg);
   }
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.pagination a {
+  padding: 5px;
+}
+
+.pagination .selected {
+  border-radius: 6px;
+  background: #646cff;
+}
