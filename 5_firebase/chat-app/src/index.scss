@@ -174,4 +174,36 @@ button {
 
 .chat-page main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  gap: 10px;
+  padding: 10px;
+}
+
+.msg-other {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: black;
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    img {
+      width: 40px;
+      border-radius: 50%;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+.msg-user {
+  background: #f99417;
+  align-self: flex-end;
+  padding: 4px 8px;
+  border-radius: 7px 7px 0 7px;
 }

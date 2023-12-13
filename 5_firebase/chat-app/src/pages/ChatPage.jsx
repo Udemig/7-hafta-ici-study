@@ -2,15 +2,27 @@ import {
   addDoc,
   collection,
   onSnapshot,
+  query,
+  where,
+  orderBy,
   serverTimestamp,
 } from 'firebase/firestore';
 import { auth, db } from '../firebase/config';
 import { useEffect, useState } from 'react';
+import Message from '../components/Message';
 
 const ChatPage = ({ room, setRoom }) => {
+  const [messages, setMessages] = useState([]);
+
   // kollekisyonun referansını alma
   const messagesCol = collection(db, 'messages');
-  const [messages, setMessages] = useState([]);
+
+  // filtreleme ayarları oluştur
+  const queryOptions = query(
+    messagesCol,
+    where('room', '==', room),
+    orderBy('createdAt', 'asc')
+  );
 
   // mesajı veritabanına ekle
   const handleSubmit = async (e) => {
@@ -30,12 +42,16 @@ const ChatPage = ({ room, setRoom }) => {
       },
       createdAt: serverTimestamp(),
     });
+
+    // formu sıfırlar
+    e.target.reset();
   };
 
+  // verilere abone ol
   useEffect(() => {
     // anlık oalrak kolleksiyondaki değişimleri izler
     // kolleksiyon her değiştiğind everidğimiz fonksiyonu çalıştırır
-    const unsub = onSnapshot(messagesCol, (snapshot) => {
+    const unsub = onSnapshot(queryOptions, (snapshot) => {
       // geçici oalrak mesajları tuutğumuz dizi
       const tempMsg = [];
 
@@ -58,7 +74,11 @@ const ChatPage = ({ room, setRoom }) => {
         <button onClick={() => setRoom(null)}>Farklı Oda</button>
       </header>
 
-      <main></main>
+      <main>
+        {messages.map((data, i) => (
+          <Message data={data} key={i} />
+        ))}
+      </main>
 
       <form onSubmit={handleSubmit}>
         <input
