@@ -14,8 +14,12 @@ import {
   arrayUnion,
   arrayRemove,
 } from 'firebase/firestore';
+import { useState } from 'react';
+import EditMode from './EditMode';
 
 const Post = ({ tweet }) => {
+  const [isEditMode, setIsEditMode] = useState(false);
+
   // tweet'in atılma tarihini hesaplama
   const date = moment(tweet?.createdAt?.toDate()).fromNow();
 
@@ -66,17 +70,27 @@ const Post = ({ tweet }) => {
           </div>
 
           {tweet.user.id === auth.currentUser.uid && (
-            <DropDown handleDelete={handleDelete} />
+            <DropDown
+              setIsEditMode={setIsEditMode}
+              handleDelete={handleDelete}
+            />
           )}
         </div>
 
         {/* orta kısım > tweet içeriği */}
-        <div>
-          {tweet.textContent && (
+        <div className="my-3">
+          {isEditMode && (
+            <EditMode
+              tweet={tweet}
+              close={() => setIsEditMode(false)}
+            />
+          )}
+
+          {!isEditMode && tweet.textContent && (
             <p className="my-2">{tweet.textContent}</p>
           )}
 
-          {tweet.imageContent && (
+          {!isEditMode && tweet.imageContent && (
             <img
               className="my-2 rounded-lg w-full object-cover max-h-[400px]"
               src={tweet.imageContent}

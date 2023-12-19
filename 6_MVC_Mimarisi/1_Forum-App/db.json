@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "user": "Mehmet",
+      "title": "React MVC Pattern(Mimari)",
+      "text": "MVC Mimari ile nasıl bileşenleri yöntirim??",
+      "date": "2023-09-11T19:13:21.364Z"
+    },
+    {
+      "id": 2,
+      "user": "Ali",
+      "title": "React MVVM Paterni",
+      "text": "Bu nedir???",
+      "date": "2023-09-11T19:13:21.364Z"
+    },
+    {
+      "id": 3,
+      "date": "2023-09-11T19:13:21.364Z",
+      "title": "React123",
+      "text": "Bunu nasıl çözeriz???",
+      "user": "Ahmet"
+    },
+    {
+      "user": "asd",
+      "title": "asd",
+      "text": "asd",
+      "id": "23dd4c26-bb65-4295-9009-a6f765449598"
+    },
+    {
+      "user": "Ahmet",
+      "title": "MVC Mantığı",
+      "text": "Nasıl Olucak?__",
+      "id": "d1d07fdd-de15-4b80-9e75-3aa06d5ac601"
+    }
+  ]
+}

@@ -189,7 +189,7 @@
       "fiyat": 1500,
       "stokAdedi": 50,
       "resim": "https://picsum.photos/201",
-      "adet": 4
+      "adet": 12
     },
     {
       "id": 2,
@@ -198,7 +198,7 @@
       "fiyat": 3000,
       "stokAdedi": 30,
       "resim": "https://picsum.photos/202",
-      "adet": 3
+      "adet": 10
     }
   ]
 }
