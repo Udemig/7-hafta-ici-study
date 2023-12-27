@@ -1,15 +1,6 @@
 {
   "jobs": [
     {
-      "id": 2,
-      "position": "Backend Developer",
-      "company": "Kodlama.io",
-      "location": "İstanbul/Üsküdar",
-      "status": "Mülakat",
-      "type": "Tam Zamanlı",
-      "date": "3/29/2023"
-    },
-    {
       "id": 5,
       "position": "Product Manager",
       "company": "Amazon",
@@ -89,6 +80,15 @@
       "type": "Staj",
       "id": "962f4d90-a04c-4806-99f1-4d224c624a7a",
       "date": "12/5/2023"
+    },
+    {
+      "position": "Frontend Developer",
+      "company": "Udemig",
+      "location": "İzmir/Bayraklı",
+      "status": "Devam Ediyor",
+      "type": "Staj",
+      "id": "034db425-71fe-4e52-9535-4d42433d2c63",
+      "date": "12/24/2023"
     }
   ]
 }

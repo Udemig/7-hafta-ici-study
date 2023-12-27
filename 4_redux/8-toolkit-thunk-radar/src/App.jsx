@@ -14,7 +14,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setInterval(() => dispatch(getFlights()), 5000);
+    dispatch(getFlights());
   }, []);
 
   // modal'ı açar
